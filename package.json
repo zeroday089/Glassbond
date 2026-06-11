@@ -1,0 +1,48 @@
+{
+  "name": "glassbond",
+  "version": "1.0.0",
+  "description": "Application-layer protection for modern web applications and APIs.",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean --sourcemap",
+    "test": "vitest run --coverage",
+    "test:run": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "security",
+    "middleware",
+    "express",
+    "fastify",
+    "nextjs",
+    "rate-limit",
+    "bot-detection",
+    "waf"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "@vitest/coverage-v8": "^1.6.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "vitest": "^1.6.1"
+  }
+}
